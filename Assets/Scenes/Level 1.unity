@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433942057210488, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4433942057210488, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -248,6 +248,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 586576768472650312, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: xRange
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 586576768472650312, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: Lasers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 586576768472650312, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: Lasers.Array.data[0]
+      value: 
+      objectReference: {fileID: 294180850}
+    - target: {fileID: 586576768472650312, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: Lasers.Array.data[1]
+      value: 
+      objectReference: {fileID: 318026459}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
 --- !u!4 &124772279 stripped
@@ -285,6 +301,11 @@ Transform:
   m_Father: {fileID: 559169843}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &294180850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2024714343211640793, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+  m_PrefabInstance: {fileID: 124772278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &313105315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,6 +387,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
+--- !u!1 &318026459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2024714344267491827, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+  m_PrefabInstance: {fileID: 124772278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &412402382
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!1 &555984805
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +548,7 @@ GameObject:
   - component: {fileID: 555984806}
   - component: {fileID: 555984808}
   - component: {fileID: 555984807}
+  - component: {fileID: 555984809}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -541,7 +572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -326.56235, y: -172.29999}
+  m_AnchoredPosition: {x: -291, y: -466}
   m_SizeDelta: {x: -653.1245, y: -344.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555984807
@@ -566,12 +597,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 63a12924ecac2c04ab89dfb76e01a825, type: 3}
-    m_FontSize: 44
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 244
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -586,6 +617,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555984805}
   m_CullTransparentMesh: 1
+--- !u!114 &555984809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555984805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efcf401183dc2574f8c3a3c646b16e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &559169842
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!1001 &698293321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -812,6 +857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!1 &703181559
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!1 &889342229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!1 &1843940804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,10 +1565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1585,6 +1636,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!4 &4232233260608862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8065263917104358094, guid: dfb2107bd1267534c92fdbc64277d013, type: 3}
@@ -1676,6 +1729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
   parent: {fileID: 889342230}
+  EnemyPoints: 12
+  Hits: 5
 --- !u!1001 &4906628443224214067
 PrefabInstance:
   m_ObjectHideFlags: 0

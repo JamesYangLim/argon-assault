@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Tooltip("ms^-1")] float controlSpeed = 50f;
     [SerializeField] [Tooltip("m")] float xRange = 28f;
     [SerializeField] [Tooltip("m")] float yRange = 13f;
+    [SerializeField] GameObject[] Lasers;
 
     [Header("Screen Position")]
     [SerializeField] float pitchFactor = -1.1f;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
     }
 
@@ -55,5 +57,25 @@ public class PlayerController : MonoBehaviour
     void FreezeController()
     {
         isControlEnable = false;
+    }
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateOrDeactivateLasers(true);
+        }
+        else
+        {
+            ActivateOrDeactivateLasers(false);
+        }
+    }
+
+    void ActivateOrDeactivateLasers(bool activate)
+    {
+        foreach (var laser in Lasers)
+        {
+            laser.SetActive(activate);
+        }
     }
 }
