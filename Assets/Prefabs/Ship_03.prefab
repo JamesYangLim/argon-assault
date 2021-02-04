@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 291030531191006274}
   - component: {fileID: 315385298633592548}
   - component: {fileID: 309454045743874610}
+  - component: {fileID: 3808839992341951669}
   m_Layer: 0
   m_Name: Ship_03
   m_TagString: Untagged
@@ -81,3 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3808839992341951669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295999405852788814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b346823926c103a498b2b808abefbc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFx: {fileID: 9023371062826999799, guid: ab49c401bedcd9c4aa1e123bba2b1fc8, type: 3}
+  parent: {fileID: 0}
+  EnemyPoints: 12
+  Hits: 5
