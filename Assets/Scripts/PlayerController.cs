@@ -75,7 +75,8 @@ public class PlayerController : MonoBehaviour
     {
         foreach (var laser in Lasers)
         {
-            laser.SetActive(activate);
+            var emission = laser.GetComponent<ParticleSystem>().emission;
+            emission.enabled = activate;
         }
     }
 }
